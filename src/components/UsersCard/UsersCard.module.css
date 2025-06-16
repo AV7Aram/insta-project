@@ -1,0 +1,12 @@
+.usersCard{
+    width: 280px;
+    height: 320px;
+    border: 1px solid #ccc;
+    border-radius: 26px;
+    padding: 20px;
+    text-align: center;
+}
+
+.usersCard > img {
+    width: 80%;
+}

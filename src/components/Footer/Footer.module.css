@@ -22,34 +22,35 @@
 .footerSection {
     flex: 1;
     min-width: 200px;
-}
 
-.footerSection h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #3498db;
-}
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #3498db;
+    }
 
-.footerSection h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #34495e;
-    padding-bottom: 0.5rem;
-}
+    h4 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #34495e;
+        padding-bottom: 0.5rem;
+    }
 
-.footerSection ul {
-    list-style: none;
-    padding: 0;
-}
+    ul {
+        list-style: none;
+        padding: 0;
 
-.footerSection ul li {
-    margin-bottom: 0.5rem;
-    cursor: pointer;
-    transition: color 0.3s;
-}
+        li {
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
 
-.footerSection ul li:hover {
-    color: #3498db;
+            &:hover {
+                color: #3498db;
+            }
+
+        }
+    }
 }
 
 .socialIcons {
@@ -72,11 +73,11 @@
     color: #ecf0f1;
     font-size: 1.2rem;
     text-decoration: none;
-}
 
-.icon:hover {
-    background-color: #3498db;
-    transform: translateY(-3px);
+    &:hover {
+        background-color: #3498db;
+        transform: translateY(-3px);
+    }
 }
 
 .footerBottom {

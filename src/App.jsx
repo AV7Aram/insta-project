@@ -1,20 +1,17 @@
-import { Routes, Route, Link } from 'react-router-dom';
-
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout/Layout';
 import Home from './pages/Home/Home';
 import UsersPage from './pages/UsersPage/UsersPage';
-
 import './App.css';
 
 function App() {
-
   return (
     <div className="App">
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/users">Users</Link>
-      </nav>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/users' element={<UsersPage />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/users" element={<UsersPage />} />
+        </Route>
       </Routes>
     </div>
   );

@@ -1,12 +1,107 @@
-.usersCard{
+.usersCard {
     width: 280px;
-    height: 320px;
-    border: 1px solid #ccc;
-    border-radius: 26px;
-    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
     text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.usersCard > img {
-    width: 80%;
+.usersCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.avatarContainer {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #f0f7ff;
+}
+
+.statusIndicator {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #2ecc71;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+.userName {
+    color: #2c3e50;
+    margin: 0 0 5px 0;
+    font-size: 1.4rem;
+}
+
+.userStatus {
+    color: #3498db;
+    margin: 0 0 20px 0;
+    font-size: 0.9rem;
+}
+
+.userStats {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #f0f7ff;
+    border-bottom: 1px solid #f0f7ff;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.statNumber {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+.statLabel {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+.followButton {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.followButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(52, 152, 219, 0.4);
+}
+
+.buttonText {
+    font-size: 1rem;
+}
+
+.buttonIcon {
+    font-size: 1.2rem;
 }

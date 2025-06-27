@@ -1,30 +1,72 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUsersThunkCreator} from '../../store/reducers/userReducer'
+import { changePageAC, getUsersThunkCreator } from '../../store/reducers/userReducer'
+import { MdNavigateBefore, MdNavigateNext } from "react-icons/md"
 
 import UsersCard from '../../components/UsersCard/UsersCard'
 import style from './UsersPage.module.css'
 
 const UsersPage = () => {
     const dispatch = useDispatch()
-    const { users, isLoading } = useSelector((state) => state.usersPage)
+    const { users, isLoading, totalPageCount, totalCount, page } = useSelector((state) => state.usersPage)
 
+    const pageCount = Math.ceil(totalCount / totalPageCount)
+
+    const groupSize = 10
+    const currentGroup = Math.floor((page - 1) / groupSize)
+    const startPage = currentGroup * groupSize + 1
+    const endPage = Math.min(startPage + groupSize - 1, pageCount)
+    const visiblePages = []
+    for (let i = startPage; i <= endPage; i++) {
+        visiblePages.push(i)
+    }
     useEffect(() => {
-        dispatch(getUsersThunkCreator())
-    }, [])
+        dispatch(getUsersThunkCreator(page))
+    }, [page])
+
+    const changePage = (p) => {
+        dispatch(changePageAC(p))
+    }
 
     return (
-        <div className={style.usersPage}>
-
-            <div className={style.usersGrid}>
-                {
-                    isLoading ? <div className={style.loading}>Loading...</div>
-                        : users?.map((user) => (
-                            <UsersCard user={user} key={user.id} />
-                        ))
-                }
+        <>
+            <div className={style.usersPage}>
+                <div className={style.usersGrid}>
+                    {
+                        isLoading ? <div className={style.loading}>Loading...</div>
+                            : users?.map((user) => (
+                                <UsersCard user={user} key={user.id} />
+                            ))
+                    }
+                </div>
             </div>
-        </div>
+            <div className={style.pagination}>
+                <button
+                    onClick={() => changePage(startPage - groupSize)}
+                    disabled={startPage === 1}
+                >
+                    <MdNavigateBefore size={24} />
+                </button>
+                {
+                    visiblePages.map((p) => (
+                        <button
+                            key={p}
+                            onClick={() => changePage(p)}
+                            disabled={p === page}
+                            style={p === page ? { backgroundColor: "#2980b9" } : {}}
+                        >
+                            {p}
+                        </button>
+                    ))
+                }
+                <button
+                    onClick={() => changePage(startPage + groupSize)}
+                    disabled={endPage === pageCount}
+                >
+                    <MdNavigateNext size={24} />
+                </button>
+            </div>
+        </>
     )
 }
 

@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import userIMG from '../../assets/user.png'
 import style from './UsersCard.module.css'
 
@@ -15,7 +16,7 @@ const UsersCard = ({ user }) => {
                 />
                 <div className={style.statusIndicator}></div>
             </div>
-            <h2 className={style.userName}>{user.name}</h2>
+            <NavLink to={`/users/:${user.id}`}><h2 className={style.userName}>{user.name}</h2></NavLink>
             <p className={style.userStatus}>Online now</p>
             <div className={style.userStats}>
                 <div className={style.stat}>

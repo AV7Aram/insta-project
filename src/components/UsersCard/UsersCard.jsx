@@ -16,16 +16,11 @@ const UsersCard = ({ user }) => {
                 />
                 <div className={style.statusIndicator}></div>
             </div>
-            <NavLink to={`/users/:${user.id}`}><h2 className={style.userName}>{user.name}</h2></NavLink>
+            <NavLink to={`/users/${user.id}`}><h2 className={style.userName}>{user.name}</h2></NavLink>
             <p className={style.userStatus}>Online now</p>
             <div className={style.userStats}>
                 <div className={style.stat}>
-                    <span className={style.statNumber}>245</span>
-                    <span className={style.statLabel}>Friends</span>
-                </div>
-                <div className={style.stat}>
-                    <span className={style.statNumber}>56</span>
-                    <span className={style.statLabel}>Posts</span>
+                    <span>{user.status ? user.status : 'no status'}</span>
                 </div>
             </div>
             <button className={style.followButton}>

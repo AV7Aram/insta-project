@@ -19,7 +19,7 @@ const profileReducer = (state = initState, action) => {
     }
 }
 
-export const profileAC = (profile) => ({ type: 'SET_PROFILE', payload: profile })
+export const profileAC = (profile) => ({ type: GET_PROFILE, payload: profile })
 
 export const getProfileThunkCreator = (id) => {
     return (dispatch) => {

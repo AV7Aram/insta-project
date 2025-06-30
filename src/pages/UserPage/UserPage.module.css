@@ -1,0 +1,95 @@
+.userPage {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 70vh;
+    background: #f4f8fb;
+    padding: 40px 0;
+}
+
+.card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
+    padding: 32px 40px;
+    display: flex;
+    gap: 40px;
+    min-width: 400px;
+    max-width: 700px;
+    width: 100%;
+}
+
+.avatarBlock {
+    flex-shrink: 0;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #3498db;
+    background: #eaf6fb;
+}
+
+.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.status {
+    font-size: 1.1rem;
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+.job, .jobDesc {
+    font-size: 1rem;
+    color: #34495e;
+}
+
+.contacts {
+    margin-top: 16px;
+}
+
+.contacts span {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.contacts ul {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contacts li a {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.98rem;
+    transition: color 0.2s;
+}
+
+.contacts li a:hover {
+    color: #2980b9;
+}
+
+.loading {
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #3498db;
+    padding: 60px 0;
+}

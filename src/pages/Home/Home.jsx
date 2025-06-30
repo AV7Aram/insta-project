@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import style from './Home.module.css'
 
 const Home = () => {
@@ -8,7 +9,7 @@ const Home = () => {
                 <h1>Welcome to Social Network</h1>
                 <p>Connect with friends and the world around you</p>
                 <div className={style.ctaButtons}>
-                    <button className={style.primaryBtn}>Get Started</button>
+                    <NavLink to="/users" className={style.primaryBtn}>Get Started</NavLink>
                     <button className={style.secondaryBtn}>Learn More</button>
                 </div>
             </div>

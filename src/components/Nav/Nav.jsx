@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import style from './Nav.module.css';
 
 const Nav = () => {
@@ -11,18 +11,18 @@ const Nav = () => {
 
     return (
         <nav className={style.nav}>
-            <Link
+            <NavLink
                 to="/"
                 className={`${style.navLink} ${isActive('/')}`}
             >
                 Home
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
                 to="/users"
                 className={`${style.navLink} ${isActive('/users')}`}
             >
                 Users
-            </Link>
+            </NavLink>
         </nav>
     );
 };

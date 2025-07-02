@@ -1,32 +1,12 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { changePageAC, getUsersThunkCreator } from '../../store/reducers/userReducer'
-import { MdNavigateBefore, MdNavigateNext } from "react-icons/md"
+import React from 'react'
+import { useSelector } from 'react-redux'
 
+import Pagination from '../../components/Pagination/Pagination'
 import UsersCard from '../../components/UsersCard/UsersCard'
 import style from './UsersPage.module.css'
 
 const UsersPage = () => {
-    const dispatch = useDispatch()
-    const { users, isLoading, totalPageCount, totalCount, page } = useSelector((state) => state.usersPage)
-
-    const pageCount = Math.ceil(totalCount / totalPageCount)
-
-    const groupSize = 10
-    const currentGroup = Math.floor((page - 1) / groupSize)
-    const startPage = currentGroup * groupSize + 1
-    const endPage = Math.min(startPage + groupSize - 1, pageCount)
-    const visiblePages = []
-    for (let i = startPage; i <= endPage; i++) {
-        visiblePages.push(i)
-    }
-    useEffect(() => {
-        dispatch(getUsersThunkCreator(page))
-    }, [page])
-
-    const changePage = (p) => {
-        dispatch(changePageAC(p))
-    }
+    const { users, isLoading, } = useSelector((state) => state.usersPage)
 
     return (
         <>
@@ -40,32 +20,7 @@ const UsersPage = () => {
                     }
                 </div>
             </div>
-            <div className={style.pagination}>
-                <button
-                    onClick={() => changePage(startPage - groupSize)}
-                    disabled={startPage === 1}
-                >
-                    <MdNavigateBefore size={24} />
-                </button>
-                {
-                    visiblePages.map((p) => (
-                        <button
-                            key={p}
-                            onClick={() => changePage(p)}
-                            disabled={p === page}
-                            style={p === page ? { backgroundColor: "#2980b9" } : {}}
-                        >
-                            {p}
-                        </button>
-                    ))
-                }
-                <button
-                    onClick={() => changePage(startPage + groupSize)}
-                    disabled={endPage === pageCount}
-                >
-                    <MdNavigateNext size={24} />
-                </button>
-            </div>
+            <Pagination />
         </>
     )
 }

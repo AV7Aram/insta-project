@@ -1,0 +1,121 @@
+.profilePage {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.profileCard {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    display: flex;
+    gap: 40px;
+}
+
+.avatarSection {
+    flex-shrink: 0;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #3498db;
+    margin-bottom: 20px;
+}
+
+.avatarPlaceholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.avatarImage{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #3498db;
+    background: #eaf6fb;
+}
+
+.infoSection {
+    flex: 1;
+}
+
+.userName {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f0f7ff;
+    padding-bottom: 15px;
+}
+
+.infoGroup {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.label {
+    font-weight: 600;
+    color: #2c3e50;
+    min-width: 120px;
+}
+
+.value {
+    color: #34495e;
+    flex: 1;
+}
+
+.actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.editButton,
+.changePasswordButton {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.editButton {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+}
+
+.changePasswordButton {
+    background-color: #f0f7ff;
+    color: #3498db;
+}
+
+.editButton:hover {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    transform: translateY(-2px);
+}
+
+.changePasswordButton:hover {
+    background-color: #e1f0ff;
+}
